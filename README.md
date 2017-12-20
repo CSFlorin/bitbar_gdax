@@ -14,6 +14,8 @@ Drag the `gdax` folder and `gdax.5s.py` file into that directory.
 
 Open `gdax.5s.py` in a text editor and change the first line to match your BitBar Plugins Directory (e.g., `#!/Users/<your username>/Documents/BitBar/gdax/bin/python` if you chose `/Users/<your username>/Documents/BitBar` as your Plugins Directory).
 
+Also open `gdax/Change Coin.sh` and change the 12th line to include that same directory (e.g., `/Users/<your username>/Documents/BitBar/gdax/gdax_settings.json` if you chose `/Users/<your username>/Documents/BitBar` as your Plugins Directory).
+
 ## Donation
 If this has saved you some time or helped you catch a good price, feel free to send me crypto. I'll keep developing this as new currencies are added and as I have time to implement new features.
 
