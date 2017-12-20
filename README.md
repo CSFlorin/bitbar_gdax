@@ -16,6 +16,8 @@ Open `gdax.5s.py` in a text editor and change the first line to match your BitBa
 
 Also open `gdax/Change Coin.sh` and change the 12th line to include that same directory (e.g., `/Users/<your username>/Documents/BitBar/gdax/gdax_settings.json` if you chose `/Users/<your username>/Documents/BitBar` as your Plugins Directory).
 
+Now click the BitBar app in the mac menu bar and click `Refresh all` to start it.
+
 ## Donation
 If this has saved you some time or helped you catch a good price, feel free to send me crypto. I'll keep developing this as new currencies are added and as I have time to implement new features.
 
