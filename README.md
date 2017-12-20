@@ -1,3 +1,7 @@
+![GDAX](https://github.com/CSFlorin/bitbar_gdax/blob/master/images/screen1.png "GDAX")
+
+![GDAX](https://github.com/CSFlorin/bitbar_gdax/blob/master/images/screen2.png "GDAX")
+
 # bitbar_gdax
 Get latest trade prices (in USD) and 24-hour percentage change for BTC, LTC, ETH, and BCH on the GDAX exchange.
 
