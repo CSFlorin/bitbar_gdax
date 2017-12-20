@@ -4,7 +4,7 @@
 # <bitbar.version>v1.0</bitbar.version>
 # <bitbar.author>Florin Langer</bitbar.author>
 # <bitbar.author.github>CSFlorin</bitbar.author.github>
-# <bitbar.desc>Get latest trade prices (in USD) for BTC, LTC, ETH, and BCH on the GDAX exchange. Just change the first line in gdax.5s.py to match your BitBar plugins folder (e.g., #!/Users/<your username>/Documents/BitBar/gdax/bin/python).</bitbar.desc>
+# <bitbar.desc>Get latest trade prices (in USD) for BTC, LTC, ETH, and BCH on the GDAX exchange.</bitbar.desc>
 # <bitbar.image>http://www.hosted-somewhere/pluginimage</bitbar.image>
 # <bitbar.dependencies>Python 3 (gdax)</bitbar.dependencies>
 # <bitbar.abouturl>http://csflorin.github.io/</bitbar.abouturl>
@@ -39,13 +39,16 @@ if __name__ == "__main__":
     print("---")
 
     if price:
-        # Print 24-hour percent increase/decrease
-        open_price = float(public_client.get_product_24hr_stats(product)["open"])
-        percent_dec = round(((open_price-price)/open_price)*100, 2)
-        if (percent_dec > 0):
-            print("-" + str(percent_dec) + "% | color=red")
-        else:
-            print("+" + str(-percent_dec) + "% | color=green")
+        try:
+            # Print 24-hour percent increase/decrease
+            open_price = float(public_client.get_product_24hr_stats(product)["open"])
+            percent_dec = round(((open_price-price)/open_price)*100, 2)
+            if (percent_dec > 0):
+                print("-" + str(percent_dec) + "% | color=red")
+            else:
+                print("+" + str(-percent_dec) + "% | color=green")
+        except KeyError:
+                print("N/A | color=red")
 
     print("Change Coin | bash=\"" + path + "/gdax/Change Coin.sh\" terminal=false refresh=true")
 
