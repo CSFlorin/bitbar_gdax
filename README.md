@@ -23,3 +23,5 @@ If this has saved you some time or helped you catch a good price, feel free to s
 * BTC: 122Esr5UsL8UsmyxmqTY3agwesgg9KemKG
 * ETH: 0xB6eC9D1A25fbC6770f3E1DA530161D8D6869875a
 * BCH: 1GpbVXr1mDFtRTkvYduBoqZCnb4EbeGPs8
+
+Happy hodling!
