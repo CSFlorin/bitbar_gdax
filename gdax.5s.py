@@ -34,7 +34,7 @@ if __name__ == "__main__":
         price = float(public_client.get_product_ticker(product)["price"])
         print("$" + str(int(price)) + str(round(price - int(price), 2))[1:].ljust(3, "0") + " | image=" + eval(product[0:3].lower() + '_img'))
     except KeyError:
-        print("N/A | image=" + eval(product[0:3].lower() + '_img'))
+        print("HODL | image=" + eval(product[0:3].lower() + '_img'))
 
     print("---")
 
@@ -48,7 +48,7 @@ if __name__ == "__main__":
             else:
                 print("+" + str(-percent_dec) + "% | color=green")
         except KeyError:
-                print("N/A | color=red")
+                print("HODL | color=red")
 
     print("Change Coin | bash=\"" + path + "/gdax/Change Coin.sh\" terminal=false refresh=true")
 
