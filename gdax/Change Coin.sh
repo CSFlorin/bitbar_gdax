@@ -3,7 +3,7 @@
 # Choose a coin
 function choose() {
   osascript <<EOT
-    choose from list {"BTC", "LTC", "ETH", "BCH"} with title "BitBar: GDAX" with prompt "Choose a coin" default items "LTC"
+    choose from list {"BTC", "LTC", "ETH", "BCH", "IOT", "DRGN"} with title "BitBar: GDAX" with prompt "Choose a coin" default items "LTC"
 EOT
 }
 

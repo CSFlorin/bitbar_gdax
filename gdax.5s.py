@@ -16,7 +16,7 @@ except ImportError:
     if __name__ == "__main__":
         pip.main(["install", "gdax"])
 
-import json, os, sys
+import json, os, sys, requests
 
 if __name__ == "__main__":
     btc_img = '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'
@@ -31,8 +31,15 @@ if __name__ == "__main__":
     product = json.load(open(path + '/gdax/gdax_settings.json'))['product']
     price = None
     try:
-        price = float(public_client.get_product_ticker(product)["price"])
-        print("$" + str(int(price)) + str(round(price - int(price), 2))[1:].ljust(3, "0") + " | image=" + eval(product[0:3].lower() + '_img'))
+        if product == 'IOT-USD':
+            price = float(requests.get("https://api.binance.com/api/v3/ticker/price?symbol=IOTABTC").json()['price']) * float(requests.get("https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT").json()['price'])
+            print("IOT $" + str(int(price)) + str(round(price - int(price), 2))[1:].ljust(3, "0"))
+        elif product == 'DRGN-USD':
+            price = requests.get("https://api.kucoin.com/v1/DRGN-BTC/open/tick").json()['data']['buy'] * requests.get("https://api.kucoin.com/v1/open/currencies").json()['data']['rates']['BTC']['USD']
+            print("DGN $" + str(int(price)) + str(round(price - int(price), 2))[1:].ljust(3, "0"))
+        else:
+            price = float(public_client.get_product_ticker(product)["price"])
+            print("$" + str(int(price)) + str(round(price - int(price), 2))[1:].ljust(3, "0") + " | image=" + eval(product[0:3].lower() + '_img'))
     except KeyError:
         print("HODL | image=" + eval(product[0:3].lower() + '_img'))
 
@@ -40,9 +47,14 @@ if __name__ == "__main__":
 
     if price:
         try:
-            # Print 24-hour percent increase/decrease
-            open_price = float(public_client.get_product_24hr_stats(product)["open"])
-            percent_dec = round(((open_price-price)/open_price)*100, 2)
+            if product == 'IOT-USD':
+                percent_dec = float(requests.get("https://api.binance.com/api/v1/ticker/24hr?symbol=IOTABTC").json()['priceChangePercent'])
+            elif product == 'DRGN-USD':
+                percent_dec = requests.get("https://api.kucoin.com/v1/DRGN-BTC/open/tick").json()['data']['changeRate']
+            else:
+                # Print 24-hour percent increase/decrease
+                open_price = float(public_client.get_product_24hr_stats(product)["open"])
+                percent_dec = round(((open_price-price)/open_price)*100, 2)
             if (percent_dec > 0):
                 print("-" + str(percent_dec) + "% | color=red")
             else:
